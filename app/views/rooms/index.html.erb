@@ -1,0 +1,30 @@
+<div id="chatroom_container" class="row bg-dark text-light">
+  <div id="side_panel" class="col-md-4 col-sm-4">
+    <h5 class="current_user_css"> <%= current_user.email %> </h5>
+    <%= image_tag("abc/zahir-accounting-software-have-more-than-60.000-users.webp", height: '100', width: '130') %>
+    <%= turbo_stream_from "users" %>
+      <div id="users">
+        <%= render @users %>
+      </div><br>
+    <%= image_tag("abc/Chatrooms.png", height: '100', width: '130') %>
+    <%= turbo_stream_from "rooms" %>
+      <div id="rooms" >
+        <%= render @rooms%>
+      </div>
+  </div>
+  <div id="room_container"
+  class="col-md-8 col-sm-8 bg-dark text-light"><br>
+    <% if @single_room %>
+
+      <div id="single_room">
+        <h4 class="text-center"> <%= @user&.email || @single_room.name %> </h4>
+        <%= turbo_stream_from @single_room %>
+        <div class="message" id="messages" data-controller="scroll">
+          <%= render @messages %>
+        </div>
+       <!-- <%= render 'layouts/new_message_form' %>  -->
+      </div>
+      <%= render 'layouts/new_message_form' %>
+    <% end %>
+  </div>
+</div>

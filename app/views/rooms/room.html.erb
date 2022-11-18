@@ -1,0 +1,12 @@
+<center><h1>CREATE ROOM</h1><br><br>
+  <%=form_with(model: @room,remote: true) do |form|%>
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %><br>
+    </div><br>
+    <div>
+      <%= form.submit :CREATE,class:"btn btn-outline-dark rounded-pill" %>
+    </div>
+  <%end%><br><br>
+  <button class="btn btn-default btn-danger"><%=link_to "GO BACK", rooms_path %></button>
+</center>

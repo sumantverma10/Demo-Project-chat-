@@ -1,0 +1,9 @@
+<div class="cont-<%=message.user.id%>">
+  <div class="message-box msg">
+    <%unless message.room.is_private%>
+    <i><b><h6 class="name"><%=message.user.email%><h6></i></b>
+    <%end%>
+    <b><%=message.body%></b><br><br>
+    <p style="color:black;"><b>[<%=message.created_at.in_time_zone('Kolkata').strftime("%d %b, %y at %I : %M %p")%>]</b></p>
+  </div>
+</div>

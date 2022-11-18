@@ -1,0 +1,19 @@
+<center>
+  <div class="badge bg-primary text-wrap" style="width: 35rem;">
+    <h1>***Start Your Chat***</h1>
+  </div><br>
+  <div style="color:red">
+    <p >Hye, we have updated our chat application on November 5 2022. The new version is an automated learning tool that will help build your business on Facebook, Instagram and WhatsApp. Learn at your own pace with easy, on -the-go lessons.
+    Topics include how to build a business presence, how to increase brand presence and engage your audience, how to grow with advertising and use insights to help improve your Facebook and Instagram ads.
+    </p>
+  </div>
+  <div>
+    <%if current_user %>
+      <p><b><h1>Welcome : </h1></b><h2 style="color:orange;"><%=current_user.email%></h2></p>
+      <button type="button" class="btn btn-dark"><%=link_to "Click To Chat", rooms_path %></button><br><br>
+    <%else%>
+      <%=link_to "Login", new_user_session_path%>
+      <%=link_to "Sign_up", new_user_registration_path%>
+    <%end%>
+  </div>
+</center>

@@ -1,0 +1,6 @@
+<div class="form-group msg-form">
+<%= form_with(model: [@single_room,@message], remote: true,class:"d-flex" ) do |form|%>
+<%= form.text_field :body%>
+<%= form.submit :SEND,onclick:"scrollToTop()",id:"scroll_down",class:"btn btn-info rounded-pill"%>
+<% end %>
+</div>

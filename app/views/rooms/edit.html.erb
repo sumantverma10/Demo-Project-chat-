@@ -1,0 +1,14 @@
+<center><h1>EDIT ROOM</h1>
+  <%= form_with(model: @room, remote: true) do |form| %>
+    <div>
+      <%=form.label :name %>
+      <%=form.text_field :name %>
+    </div><br>
+    <div>
+      <%=form.submit%>
+    </div>
+  <% end %><br>
+  <div>
+    <button class="btn btn-default btn-danger"><%=link_to "Go Back", rooms_path %></button>
+  </div>  
+</center>
